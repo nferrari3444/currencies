@@ -203,71 +203,13 @@ console.log(req.user)
 )
   
 
-//app.post()
-// app.get('/currency/:curr', function(req, res, next) {
-//   var topicname = req.params.curr;
-//   res.send("hola hola")
-// })
 
 
-    
-//  app.post("/", function (req,res) {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3002
+}
 
-//         console.log("Post request received");
-//         const currencyExchange = req.body.currency
-//         const currencyExchange_ = req.body
-        
-//         console.log("currency is")
-//         console.log(currencyExchange)
-
-//         var typeOfVar = Object.prototype.toString.call(currencyExchange);
-//         console.log(typeOfVar)
-      
-//         var baseCurr= 'USD'
-//         var quoteCurr = currencyExchange.slice(4,7)
-//         console.log(baseCurr)
-//         console.log(quoteCurr)
-
-//         var url = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=" + baseCurr + "&to_currency=" + quoteCurr + "&apikey=RQKFECZIU89JZK5T";
-//         // res.redirect("/currency/" + currencyExchange)
-//         console.log(url)
-
-// request.get({
-//     url: url,
-//     json: true,
-//     headers: {'User-Agent': 'request'}
-//   }, (err, res, data) => {
-//     if (err) {
-//       console.log('Error:', err);
-//     } else if (res.statusCode !== 200) {
-//       console.log('Status:', res.statusCode);
-//     } else {
-//       // data is successfully parsed as a JSON object:
-//       console.log('data is:')
-//       console.log(data)
-//       const info = data[Object.keys(data)[0]]
-//       console.log(info)
-//       const baseCurr = info['1. From_Currency Code']
-//       const quoteCurr = info['3. To_Currency Code']
-
-//       console.log("Exchange Rate for Currency Pair" + " "+ baseCurr + " "+  "To" + " " +
-//        quoteCurr + " " + "is" + " ") 
-
-//       var rate = info['5. Exchange Rate']
-      
-//       console.log(info['5. Exchange Rate'])
-//       console.log(Array.from(info))
-//       console.log(data);
-//     }
-//     const info = data[Object.keys(data)[0]]
-//     var rate = info['5. Exchange Rate']
- 
-// });
-// });
-
-
-
-
-app.listen(process.env.PORT || 3002, function() {
-    console.log("Server is running on port 3002")
+app.listen(port,  function() {
+    console.log("Server has started successfully")
 });
