@@ -1,0 +1,62 @@
+
+body {
+    background-color: gold;
+    margin-top: 100px;
+    margin-left: 100px;
+} 
+.center-modal{
+    text-align: center;
+}
+h1{
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    margin-top: -30px;
+    padding-top: -30px;
+    text-align: center;
+    margin-left:-50px;
+    font-size: 60px;
+};
+    .row .vertical-gaps{
+    margin-top: 50px;
+    background-color: green;
+}
+
+.fa-fw{
+    line-height: 10px;
+}
+.top-buffer{
+    padding-top: 30px;
+}
+
+img {
+    height: 50px;
+    width: 70px;
+    margin-top: -55px;
+    position: absolute;
+    margin-bottom: 0px;
+    
+}
+
+label.form-check-label {
+    text-align: left;
+    position: relative;
+    margin-left: 0px;
+    float: left
+}
+
+.move-top {
+    margin-top: -130px;
+  
+}
+
+#logout-button{
+    right: 30px;
+    top : 30px;
+    position: absolute;
+
+}
+
+#login-card {
+margin-top: 50px;
+}

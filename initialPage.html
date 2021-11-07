@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Currency Exchanges</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+      
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet"  href="css/styles.css">
+       
+        
+    </head>
+    <div class="container">
+      <!--Modal-->
+     <div class="modal fade" role="dialog">
+       <div class="modal-dialog">
+         <!--Modal Content-->
+         <div class="modal-content">
+           <div class="modal-header">
+             <!-- <button type="button"  data-dismiss="modal">&times</button> -->
+             <h4 class="modal-title centerModal">  </h4>
+           </div>
+           <div class="modal-body">
+             obtenerlo de app.js
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
+ 
+     </div>
+    <body>
+      <div class = "top-place">
+      <h1>Choose Your Currency:</h1>   
+      <a class="btn btn-light btn-lg" id="logout-button" href="/logout" role="button">Log Out</a>
+    </div>  
+      <div class="container"> 
+        <!-- <form action="/" method = 'POST'> -->
+        
+    
+            <div class="row mb-5 mt-5 vertical-gap" >
+        <div class="form-check" >
+            <img src = "/images/japan-flag-png-large.png" alt="japan-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-JPY" id="Japan">
+            <label class="form-check-label" for="flexCheckUSDJPY">
+              JPY-USD
+            </label>
+        </div>
+        <div class="form-check">
+          <img src = "/images/argentinian-flag.jpg" alt="argentinian-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-ARS" id="Argentina">
+            <label class="form-check-label" for="flexCheckUSDARG">
+              ARS-USD
+            </label>
+          </div>
+          <div class="form-check">
+            <img src = "/images/brazil-flag-png-large.png" alt="brazil-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-BRL" id="Brazil">
+            <label class="form-check-label" for="USDBRL">
+              BRL-USD
+            </label>
+          </div>
+          <div class="form-check">
+            <img src = "/images/chile-flag-png-large.png" alt="chile-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-CLP" id="Chile">
+            <label class="form-check-label" for="flexCheckUSDCLP">
+              CLP-USD
+            </label>
+          </div>
+        </div>
+        <div class="row mt-5 mb-5 top-buffer">
+          <div class="form-check col">
+            <img src = "/images/china-flag.png" alt="china-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-CNY" id="China">
+            <label class="form-check-label" for="flexCheckUSDCNY">
+              CNY-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/paraguay-flag-png-large.png" alt="paraguay-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-PYG" id="Paraguay">
+            <label class="form-check-label" for="flexCheckUSDPYG">
+              PYG-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/peru-flag-png-large.png" alt="peru-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-PEN" id="Peru">
+            <label class="form-check-label" for="flexCheckUSDPEN">
+              PEN-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/bolivia-flag.jpg" alt="bolivia-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-BOB" id="Bolivia">
+            <label class="form-check-label" for="flexCheckUSDBOB">
+              BOB-USD
+            </label>
+          </div>
+        </div>
+        <div class="row mt-5 mb-5 top-buffer">
+          <div class="form-check col">
+            <img src = "/images/colombia-flag-png-large.png" alt="colombia-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-COP" id="Colombia">
+            <label class="form-check-label" for="flexCheckUSDCOP">
+              COP-USD
+            </label>
+          </div>
+          <div class="form-check col">
+             <img src = "/images/mexico-flag-png-large.png" alt="mexico-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-MXN" id="Mexico">
+            <label class="form-check-label" for="flexCheckUSDMXN">
+              MXN-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/canada-flag-png-large.png" alt="canada-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-CAD" id="Canada">
+            <label class="form-check-label" for="flexCheckUSDCAD">
+              CAD-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/europe-flag.jpg" alt="europe-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-EUR" id="Europe">
+            <label class="form-check-label" for="flexCheckUSDEUR">
+              EUR-USD
+            </label>
+          </div>
+        </div>
+        <div class="row mt-5 mb-5 top-buffer">
+          <div class="form-check col">
+            <img src = "/images/england-flag.jpg" alt="england-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-GBP" id="England">
+            <label class="form-check-label" for="USD-GBP">
+              GBP-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/panama-flag.png" alt="panama-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-PAB" id="Panama">
+            <label class="form-check-label" for="flexCheckUSDPAB">
+              PAB-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/dominican-republic-flag-png-large.png" alt="dominican-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-DOP" id="DominicanRepublic">
+            <label class="form-check-label" for="flexCheckUSDDOP">
+              DOM-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/honduras-flag-png-large.png" alt="honduras-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-HNL" id="Honduras">
+            <label class="form-check-label" for="flexCheckUSDHNL">
+              HON-USD
+            </label>
+          </div>
+          </div>
+          <div class="row mt-5 mb-5 top-buffer">
+          <div class="form-check col">
+            <img src = "/images/guatemala-flag-png-large.png" alt="guatemala-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-GTQ" id="Guatemala">
+            <label class="form-check-label" for="flexCheckUSDGTQ">
+              GTQ-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/uruguay-flag-png-large.png" alt="uruguay-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-UYU" id="Uruguay">
+            <label class="form-check-label" for="flexCheckUSDUYU">
+            UYU-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/south-africa-flag-png-large.png" alt="south-africa-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-ZAR" id="SouthAfrica">
+            <label class="form-check-label" for="flexCheckUSDZAR">
+            ZAR-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/indonesia-flag-png-large.png" alt="indonesia-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-IDR" id="Indonesia">
+            <label class="form-check-label" for="flexCheckUSDIDR">
+            IDR-USD
+            </label>
+          </div>
+        </div>
+        <div class="row mt-5 mb-5 top-buffer">
+          <div class="form-check col">
+            <img src = "/images/india-flag-png-large.png" alt="india-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-INR" id="India">
+            <label class="form-check-label" for="flexCheckUSDINR">
+              INR-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/jamaica-flag-png-large.png" alt="jamaica-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-JMD" id="Jamaica">
+            <label class="form-check-label" for="flexCheckUSDJMD">
+            JMD-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/norway-flag-png-large.png" alt="norway-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-NOK" id="Norway">
+            <label class="form-check-label" for="flexCheckUSDNDK">
+            NOK-USD
+            </label>
+          </div>
+          <div class="form-check col">
+            <img src = "/images/new-zealand-flag-png-large.png" alt="new-zealand-flag">
+            <input class="form-check-input" type="radio" name = "currency" value="USD-NZD" id="NewZeland">
+            <label class="form-check-label" for="flexCheckUSDNZD">
+            NZD-USD
+            </label>
+          </div>
+          </div>
+          <div class="row mt-5 mb-5 top-buffer">
+            <div class="form-check col">
+              <img src = "/images/philippines-flag-png-large.png" alt="philippines-flag">
+              <input class="form-check-input" type="radio" name = "currency" value="USD-PHP" id="Philipines">
+              <label class="form-check-label" for="flexCheckUSDPHP">
+                PHP-USD
+              </label>
+            </div>
+            <div class="form-check col">
+              <img src = "/images/poland-flag-png-large.png" alt="poland-flag">
+              <input class="form-check-input" type="radio" name = "currency" value="USD-PLN" id="Poland">
+              <label class="form-check-label" for="flexCheckUSDPLN">
+              PLN-USD
+              </label>
+            </div>
+            <div class="form-check col">
+              <img src = "/images/russia-flag-png-large.png" alt="russian-flag">
+              <input class="form-check-input" type="radio" name = "currency" value="USD-RUB" id="Russia">
+              <label class="form-check-label" for="flexCheckUSDRUB">
+              RUB-USD
+              </label>
+            </div>
+            <div class="form-check col">
+          
+              <img src = "/images/thailand-flag-png-large.png" alt="thailand-flag">
+              <input class="form-check-input" type="radio" name = "currency" value="USD-THB" id="Thailand">
+              <label class="form-check-label label-position" for="flexCheckUSDTHB">
+              <p>THB-USD</p>
+              </label>
+            </div>
+            </div>
+
+            <div class="row mt-5 mb-5 top-buffer">
+            <div class="form-check col">
+              <img src = "/images/vietnam-flag-png-large.png" alt="vietnam-flag">
+              <input class="form-check-input" type="radio" name = "currency" value="USD-VND" id="Vietnam">
+              <label class="form-check-label label-position" for="flexCheckUSDVND">
+              
+              <p>VND-USD</p>
+              </label>
+            </div>
+            </div>
+       </div> 
+        
+        <!-- </form> -->
+   
+
+   
+    <script type="text/javascript" src="js/triggers.js"></script>
+    </body>
+</html>
+
+
+
+
+
