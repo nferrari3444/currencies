@@ -139,11 +139,11 @@ app.get("/currency-data", function(req,res) {
     
 
 
-app.get("https://desolate-dusk-88347.herokuapp.com/auth/google" , 
+app.get("/auth/google" , 
   passport.authenticate("google", {scope: ["profile"]} )
 )
 
-app.get("https://desolate-dusk-88347.herokuapp.com/auth/google/currency-exchange", 
+app.get("/auth/google/currency-exchange", 
 passport.authenticate('google', {failureRedirect: '/login' }),
 function(req, res) {
   //Successful authentication, redirect home.
