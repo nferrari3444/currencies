@@ -113,7 +113,7 @@ function(token, tokenSecret, profile, done) {
 passport.use(new GoogleStrategy({
   clientID:     process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://https://desolate-dusk-88347.herokuapp.com/auth/google/currency-exchange",
+  callbackURL: "https://desolate-dusk-88347.herokuapp.com/auth/google/currency-exchange",
   passReqToCallback   : true
 },
 function(request, accessToken, refreshToken, profile, done) {
