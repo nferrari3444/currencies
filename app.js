@@ -3,7 +3,6 @@ const request = require("request")
 const bodyParser = require("body-parser");
 
 require('dotenv').config();
-var ObjectId = require('mongodb').ObjectID;
 const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
 const session = require("express-session");
@@ -66,20 +65,6 @@ const socialUser = new mongoose.model("socialUser", userSchema)
 
 passport.use(currUser.createStrategy());
 
-// passport.serializeUser(function(currUser,done){
-//   done(null, currUser.id)
-// });
-
-// passport.deserializeUser(function(id, done){
-//   currUser.findById(id, function(err, currUser){
-//     done(err,currUser)
-//   })
-// });
-
-// passport.serializeUser( (user, done) => {
-//   var sessionUser = { _id: user._id, name: user.name, email: user.email, roles: user.roles }
-//   done(null, sessionUser)
-// })
 
 // serialize the user.id to save in the cookie session, so the browser will remember
 // the user when login
@@ -97,7 +82,8 @@ passport.deserializeUser(function(id,done) {
 passport.use(new TwitterStrategy({
   consumerKey: process.env.TWITTER_CONSUMER_KEY,
   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-  callbackURL: "http://localhost:3002/auth/twitter/currency-exchange",
+ 
+  callbackURL: " https://desolate-dusk-88347.herokuapp.com/auth/twitter/currency-exchange",
 //  passReqToCallback: true
 },
 function(token, tokenSecret, profile, done) {
