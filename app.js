@@ -139,7 +139,7 @@ app.get("/currency-data", function(req,res) {
     
 
 
-app.get("/auth/google" , 
+app.get("https://desolate-dusk-88347.herokuapp.com/auth/google" , 
   passport.authenticate("google", {scope: ["profile"]} )
 )
 
