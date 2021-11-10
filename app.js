@@ -113,7 +113,7 @@ function(token, tokenSecret, profile, done) {
 passport.use(new GoogleStrategy({
   clientID:     process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3002/auth/google/currency-exchange",
+  callbackURL: "http://https://desolate-dusk-88347.herokuapp.com/auth/google/currency-exchange",
   passReqToCallback   : true
 },
 function(request, accessToken, refreshToken, profile, done) {
@@ -143,7 +143,7 @@ app.get("/auth/google" ,
   passport.authenticate("google", {scope: ["profile"]} )
 )
 
-app.get("/auth/google/currency-exchange", 
+app.get("./auth/google/currency-exchange", 
 passport.authenticate('google', {failureRedirect: '/login' }),
 function(req, res) {
   //Successful authentication, redirect home.
