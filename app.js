@@ -36,7 +36,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-mongoose.connect("mongodb+srv://admin-nicolas:baltazar2020@currencycluster.1y7ya.mongodb.net/currencyUsers", {useNewUrlParser: true});
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@currencycluster.1y7ya.mongodb.net/currencyUsers`, {useNewUrlParser: true});
 //mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
