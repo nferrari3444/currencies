@@ -84,7 +84,8 @@ passport.use(new TwitterStrategy({
   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
  
   callbackURL: " https://desolate-dusk-88347.herokuapp.com/auth/twitter/currency-exchange",
-//  passReqToCallback: true
+  proxy: true
+  //  passReqToCallback: true
 },
 function(token, tokenSecret, profile, done) {
   console.log('twitter profile')
