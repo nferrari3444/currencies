@@ -41,10 +41,8 @@ app.use(flash());
 
 // db connection
 mongoose.connect(
-  process.env.DATABASE, 
-  {useNewUrlParser: true,
-      autoIndex: true,
-  }
+  process.env.DATABASE
+  
 )
 .then(() => console.log('DB Connected'))
 
