@@ -38,7 +38,8 @@ app.use(passport.session());
 app.use(flash());
 
 const connectDatabase = async () => {
-  try { mongoose.set("useNewUrlParser", true);
+   try { 
+  //  mongoose.set("useNewUrlParser", true);
 
   await mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@currencycluster.1y7ya.mongodb.net/currencyUsers`);
   console.log('Connected to database')
