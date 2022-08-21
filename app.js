@@ -37,21 +37,23 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-const connectDatabase = async () => {
-   try { 
-  //  mongoose.set("useNewUrlParser", true);
 
-  await mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@currencycluster.1y7ya.mongodb.net/currencyUsers`);
-  console.log('Connected to database')
-}
-catch(error) {
-  console.log(error)
-  process.exit(1)
 
-}
-};
+// db connection
+mongoose.connect(
+  process.env.DATABASE, 
+  {useNewUrlParser: true,
+      autoIndex: true,
+  }
+)
+.then(() => console.log('DB Connected'))
 
-connectDatabase();
+mongoose.connection.on('error', err => {
+  console.log(`DB connection error: ${err.message}`)
+})
+
+
+
 
 
 //mongoose.set("useCreateIndex", true);
