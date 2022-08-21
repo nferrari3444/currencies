@@ -49,6 +49,10 @@ catch(error) {
 
 }
 };
+
+connectDatabase();
+
+
 //mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
