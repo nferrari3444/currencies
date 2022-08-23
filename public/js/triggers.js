@@ -12,12 +12,12 @@ $('input[type=radio]').on('click', function(event){
     var currencyExchange = val
     var baseCurr= 'USD'
     var quoteCurr = currencyExchange.slice(4,7)
-    var url =  "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+ baseCurr + "&to_currency=" +quoteCurr +"&apikey=RQKFECZIU89JZK5T"
+    var url =  "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol="+ baseCurr + "&to_symbol=" +quoteCurr +"&apikey=RQKFECZIU89JZK5T"
     console.log(quoteCurr)
     console.log(url)
     $.get(
     
-         "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+ baseCurr + "&to_currency=" +quoteCurr +"&apikey=RQKFECZIU89JZK5T"
+         "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol="+ baseCurr + "&to_symbol=" +quoteCurr +"&apikey=RQKFECZIU89JZK5T"
        ,
         function(data,status) {
             // alert("Data: "+ data + "\nStatus: " + status)
@@ -25,9 +25,12 @@ $('input[type=radio]').on('click', function(event){
             console.log(status)
             const info = data[Object.keys(data)[0]]
            console.log(info)
-           const baseCurr = info['1. From_Currency Code']
-           const quoteCurr = info['3. To_Currency Code']
-           var rate = info['5. Exchange Rate']
+           const baseCurr = info['2. From Symbol']
+           const quoteCurr = info['3. To Symbol']
+           
+           const rate_data = data[Object.keys(data)[1]]
+           const lastDate = Object.keys(rate_data)[0]
+           var rate = rate_data[lastDate]['4. close'] //          ['5. Exchange Rate']
            var rate_2 = Math.round(rate  * 100) / 100
            console.log(rate_2)
            console.log("Exchange Rate for Currency Pair" + " "+ baseCurr + " "+  "To" + " " +
